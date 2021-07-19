@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="准备工作-工具安装一般搭建博客网站需要有服务器、数据库、注册域名，如果这些都没有，那么使用GitHub照样能做到。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub+Hexo搭建个人网站">
+<meta property="og:url" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/index.html">
+<meta property="og:site_name" content="DXW的博客">
+<meta property="og:description" content="准备工作-工具安装一般搭建博客网站需要有服务器、数据库、注册域名，如果这些都没有，那么使用GitHub照样能做到。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/8b2770291997e69498d3e3416c588c65e6a6afb1.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/39948aad033052863d23d68f95269c3f79a8c6ec.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/916cf0cd50b747a84ec9169673adcd7c21c85882.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/51ba0d57940f38f61f1457fb156a69f25f86546f.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/5199ce1a220895291bb7d691d06fef3abc7724a9.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/360cd1e850920a98d6777462a4dbc849449d40b6.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/d805cf5b088fdbf21b9f6ff62e41ca8895d315ca.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/6c76dfcf5426bfdbdfbeecb1f181efb4388caa91.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/ebc5c98af104463f0131938b58c74703c4a5b80e.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/15c21dd511bcbbc1d6d0afc1654abdd6b3fd0ad5.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/797bbd81ed3017d6dab6fe8688e8a31623499555.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/693539b246d0b98b4f2fabcd72c9b25d6685d4dc.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/d12e27f1e3ca5b311ff78ebc111b7c7f27ad0f26.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/8f50a53db49eabf1530c69b690ba74d71ddf064e.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/0b1dea7da143a8c201fa9ac9c1e1e33005ac583b.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/420d612cfce3f7e65571787b5be0c60eb7dd922e.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/07dc0a9a7edf36ccb397afc3eef8ed02291a7825.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/8e066054d04d9f4d8de13585f6d460f248e5f3a6.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/c78d626ccc45be5e92bcd39a7a58937aa609df3e.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/c4644a228ebcb2354a714d78edc2e71a1b6a8518.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/76039c89e34f1a2e9bb07933ee34ceddfe9ee3ff.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/dce386644768b9f1fb00ea7c3de276249b9034a5.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/aa3f335205e65707c82b8d47898f782c3524aebb.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/00fe3c5a3738e415881518575f0b8211ec425b2b.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/67cd3db7dbc50a34c77b1af7c228df380b2d6a68.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/735e9a641b8ae3944a9f8b12c52b84fe64373b19.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/449800c1e0c3b21940d042bd4d742e800dd589cf.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/3baa485041db0ed9cafe6ada03d4878fafe78001.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/ae74456fa941e36d51de0b876efdff63ffb94c3a.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/f91f61af84d7e5790371182b2e14176b33adaba0.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/0ce8d5a977f317f08485f4baf7d4820729876f4b.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/d2447cea9af6e412483d176c85161c65f84fba1f.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/086d689a70691391b64bf2a4ad3301f88626687b.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/383e4768858c83308859b93c245687890fe2afea.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/5f5cd5b7b496d52185e426748197e2cabf791e4e.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/0d76c1441b9e6c7aab874165c41bc5266ccacb7c.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/72f9b3743cc123670389c79dd0ce6136e38e0b67.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/76127228beb01cf4952d703b1fdf7489714f0b23.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/f97c11c6acb0625ff938eb0e6bd08c4f26c1d6e2.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/efaf58b561e690947793c59c9b8c306a590dfef2.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/bcc6e07c647e26db11571351332dce8cf73dd486.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/7403ba644997f4145b4c2d2281b6653829f8b5bb.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/1a464e9cd369912ec7505c79cda8b5c75780f355.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/a0c4e9f21a01f8ee25aa7762d001ffdca5905432.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/96da316f8bdb42ad7bb95183f033abef0d88d8f5.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/21c10d22a80b2d8c506521c9346479ba333a58de.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/df596d47d73ee6be3d87b27c21b32cda782ccd26.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/858d56bc548841fc22470a1e7c8e257f740d84aa.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/ffbce1e22d5709ae32721a40b21273a217e8106f.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/cf1c703bea3484eb6238726f44a6d0bf96fc26ac.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/4d2da87eef4886e702570249aac99063fda23811.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/a3d25dedd3e75cdc1cd8e40ddc84a3971280f1a4.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/29aa6cf651d89d187a6870206fc3e818e0a56815.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/7dd600f2aa616f4f71eff7a8b606deda304f84ee.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/b2f7c6a00b07d2990795f3afc88bbf9dbe1ba36f.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/9510d55204f914cc15701dc9386cb2ace6d386d8.png">
+<meta property="og:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/b7b306c746eb071ada5edec19d23a3ca9e87cbdd.png">
+<meta property="article:published_time" content="2021-07-19T16:02:44.000Z">
+<meta property="article:modified_time" content="2021-07-19T16:23:48.880Z">
+<meta property="article:author" content="Dongxuewei">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/8b2770291997e69498d3e3416c588c65e6a6afb1.png">
+
+
+<link rel="canonical" href="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/","path":"2021/07/20/GitHub+Hexo搭建个人网站/","title":"GitHub+Hexo搭建个人网站"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>GitHub+Hexo搭建个人网站 | DXW的博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">DXW的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">测试技术栈</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section">首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section">关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section">标签</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C-%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">准备工作-工具安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github"><span class="nav-number">1.2.</span> <span class="nav-text">github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-js"><span class="nav-number">1.3.</span> <span class="nav-text">node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">1.4.</span> <span class="nav-text">hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99"><span class="nav-number">2.</span> <span class="nav-text">本地搭建网站</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="nav-number">2.1.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96hexo"><span class="nav-number">2.2.</span> <span class="nav-text">初始化hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2"><span class="nav-number">2.3.</span> <span class="nav-text">生成静态页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E8%AE%BF%E9%97%AEhexo%E7%BD%91%E7%AB%99"><span class="nav-number">2.4.</span> <span class="nav-text">本地访问hexo网站</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0github"><span class="nav-number">3.</span> <span class="nav-text">部署到github</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Github%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="nav-number">3.1.</span> <span class="nav-text">Github创建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E9%83%A8%E7%BD%B2%E5%88%B0Github"><span class="nav-number">3.2.</span> <span class="nav-text">本地仓库部署到Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AESSH"><span class="nav-number">3.2.1.</span> <span class="nav-text">配置SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%88%90-SSH-%E5%AF%86%E5%8C%99"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">生成 SSH 密匙</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-SSH-%E5%AF%86%E5%8C%99"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">添加 SSH 密匙</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%98%AF%E5%90%A6%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">测试是否配置成功</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEdeploy"><span class="nav-number">3.2.2.</span> <span class="nav-text">配置deploy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0github-1"><span class="nav-number">3.2.3.</span> <span class="nav-text">部署到github</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%B9%B6%E9%83%A8%E7%BD%B2"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">生成并部署</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">修改博客主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%BB%E9%A2%98"><span class="nav-number">4.1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">4.2.</span> <span class="nav-text">更换主题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="nav-number">5.</span> <span class="nav-text">绑定自定义域名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C"><span class="nav-number">5.1.</span> <span class="nav-text">域名注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="nav-number">5.2.</span> <span class="nav-text">域名解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE"><span class="nav-number">5.3.</span> <span class="nav-text">域名配置</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Dongxuewei</p>
+  <div class="site-description" itemprop="description">软件测试</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kanbuki" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kanbuki" rel="noopener" target="_blank">GitHub</a>
+      </span>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Dongxuewei">
+      <meta itemprop="description" content="软件测试">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DXW的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          GitHub+Hexo搭建个人网站
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-07-20 00:02:44 / 修改时间：00:23:48" itemprop="dateCreated datePublished" datetime="2021-07-20T00:02:44+08:00">2021-07-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="准备工作-工具安装"><a href="#准备工作-工具安装" class="headerlink" title="准备工作-工具安装"></a>准备工作-工具安装</h1><p>一般搭建博客网站需要有服务器、数据库、注册域名，如果这些都没有，那么使用GitHub照样能做到。</p>
+<span id="more"></span>
+
+<p><strong>服务器：</strong>GitHub提供了 GitHub Pages 功能来架设一个静态网站，这就解决了服务器的问题。<br><strong>数据库：</strong>Hexo是一个快速、简介且高效博客框架，可以结合<code>Node.js很快速的</code>将MarkDown格式的文章<code>渲染成</code>静态网页文件html，这样文章的内容、标题、标签等信息就没必要存数据库里面了，是直接纯静态页面了，这就解决了数据库的问题。<br><strong>域名：</strong>GitHub Pages 允许每个账户创建一个名为 {username}.<a href="https://link.zhihu.com/?target=http://github.io">http://</a><code>github.io</code> 的仓库，并自动为这个仓库分配一个 <a href="https://link.zhihu.com/?target=http://github.io">http://</a><code>github.io</code> 的二级域名，这就解决了域名的问题，当然如果想要自定义域名的话也是可以支持的。</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><code>Git是一个开源的分布式版本控制系统,可以有效、高速的处理从很小到非常大的项目版本管理。</code>配合云端仓库<code>（</code>例如Github、码云等<code>）</code>进行使用，<code>可以将我们在本地计算机编写的代码提交到</code>云端仓库<code>上。</code><br><code>安装目的：将在本地编写的文档提交到</code>云端仓库Github上。<br><code>git官方下载地址：</code><a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/8b2770291997e69498d3e3416c588c65e6a6afb1.png" alt="8b2770291997e69498d3e3416c588c65e6a6afb1"><br>下载后默认下一步安装即可。<br>安装完成后右击桌面会看到增加了两项内容：<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/39948aad033052863d23d68f95269c3f79a8c6ec.png" alt="39948aad033052863d23d68f95269c3f79a8c6ec"><br>选择Git Bash Here，可以在弹出窗口中输入git命令上传文件<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/916cf0cd50b747a84ec9169673adcd7c21c85882.png" alt="916cf0cd50b747a84ec9169673adcd7c21c85882"><br>注意：安装完成后有可能需要重启电脑git才能生效。</p>
+<h2 id="github"><a href="#github" class="headerlink" title="github"></a>github</h2><p><code>GitHub是一个利用Git进行版本控制、专门用于存放软件代码与内容的共享网站。</code><br><code>github官方注册地址：</code><a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/51ba0d57940f38f61f1457fb156a69f25f86546f.png" alt="51ba0d57940f38f61f1457fb156a69f25f86546f"><br><code>然后依次点击 continue ，submit，就到这个界面，start a project</code><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/5199ce1a220895291bb7d691d06fef3abc7724a9.png" alt="5199ce1a220895291bb7d691d06fef3abc7724a9"><br><code>接着会让你去邮箱验证</code><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/360cd1e850920a98d6777462a4dbc849449d40b6.png" alt="360cd1e850920a98d6777462a4dbc849449d40b6"><br><code>登录自己的邮箱，点开github给你发的邮件，点击链接</code><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/d805cf5b088fdbf21b9f6ff62e41ca8895d315ca.png" alt="d805cf5b088fdbf21b9f6ff62e41ca8895d315ca"><br><code>验证成功后，就正式注册完成了。</code><br><code>如果不想在浏览器中操作github网站而是想要安装github的客户端的话也是可以的。</code></p>
+<h2 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h2><p><strong>下载并安装：</strong><br>Node.js是HEXO的依赖的应用程序，<br>下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">https://nodejs.org/zh-cn/download/</a><br>根据自己的系统选择下载对应的版本。<br>下载完成后一路点击next进行安装即可。<br>安装完毕之后，确保环境变量配置好，能正常使用 npm 命令。<br>目的是为了能够使用npm命令安装HEXO。<br><strong>测试安装是否成功：</strong><br>在cmd命令行中输入npm -v查看npm的版本，输入node -v查看安装的nodejs的版本。<br>直接输入 node，就进入到了node的开发模式下，输入 console.log(‘xx’) 回车，如果可以看到输出的信息，说明nodeJs 的环境没有问题，nodeJs安装完成。<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/6c76dfcf5426bfdbdfbeecb1f181efb4388caa91.png" alt="6c76dfcf5426bfdbdfbeecb1f181efb4388caa91"><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/ebc5c98af104463f0131938b58c74703c4a5b80e.png" alt="ebc5c98af104463f0131938b58c74703c4a5b80e"></p>
+<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><p><strong>hexo简介：</strong><br>Hexo是一个快速、简介且高效博客框架，支持Markdown格式，能够结合<code>Node.js让页面在快速完成渲染</code>，有众多优秀插件和主题。<br><code>官网：?</code><a target="_blank" rel="noopener" href="http://hexo.io/"><code>http://hexo.io</code></a><br><code>github:?</code><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo"><code>https://github.com/hexojs/hexo</code></a><br><strong>工作原理：</strong><br>由于github pages存放的都是静态文件，博客存放的不只是文章内容，还有文章列表、分类、标签、翻页等动态内容，假如每次写完一篇文章都要手动更新博文目录和相关链接信息，太麻烦，所以hexo所做的就是将这些md文件都放在本地，每次写完文章后调用写好的命令来批量完成相关页面的生成，然后再将有改动的页面提交到github。<br><strong>注意事项：</strong></p>
+<ol>
+<li> 很多命令既可以用Windows的cmd来完成，也可以使用git bash来完成，但是部分命令会有一些问题，为避免不必要的问题，建议全部使用git bash来执行，包括Hhexo的安装，具体安装步骤可见下文；</li>
+<li> hexo不同版本差别比较大，网上很多文章的配置信息都是基于2.x的，所以注意不要被误导；</li>
+<li> hexo有2种_config.yml文件，一个是根目录下的全局的_config.yml（站级配置文件），一个是theme下的（主题配置文件）。</li>
+</ol>
+<h1 id="本地搭建网站"><a href="#本地搭建网站" class="headerlink" title="本地搭建网站"></a>本地搭建网站</h1><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a><code>安装hexo</code></h2><p>在计算机本地找一个目录来作为本地的仓库,比如” E:\dxwblog”,那么就在dxwblog文件夹下安装hexo并利用hexo初始化本地仓库。<br><strong>注意：</strong>由于这个文件夹将来就作为存放博客内容的地方，所以选择的时候慎重一些，最好不要随便放。<br>进入本地仓库目录，右击打开git bash终端，并使用npm命令安装hexo：<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/15c21dd511bcbbc1d6d0afc1654abdd6b3fd0ad5.png" alt="15c21dd511bcbbc1d6d0afc1654abdd6b3fd0ad5"><br><strong>npm install -g hexo-cli</strong><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/797bbd81ed3017d6dab6fe8688e8a31623499555.png" alt="797bbd81ed3017d6dab6fe8688e8a31623499555"><br>注意：此命令为全局安装，npm install hexo命令为局部安装，详情可参见官网<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a><br>输入hexo –v验证安装是否成功<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/693539b246d0b98b4f2fabcd72c9b25d6685d4dc.png" alt="693539b246d0b98b4f2fabcd72c9b25d6685d4dc"></p>
+<h2 id="初始化hexo"><a href="#初始化hexo" class="headerlink" title="初始化hexo"></a><code>初始化hexo</code></h2><p>安装hexo后，对本地仓库进行初始化，注意一定要在本地仓库的根目录下执行<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/d12e27f1e3ca5b311ff78ebc111b7c7f27ad0f26.png" alt="d12e27f1e3ca5b311ff78ebc111b7c7f27ad0f26"><br>初始化完成后会自动下载一些文件到这个本地仓库，目录结构如下图：<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/8f50a53db49eabf1530c69b690ba74d71ddf064e.png" alt="8f50a53db49eabf1530c69b690ba74d71ddf064e"></p>
+<ol>
+<li> _config.yml：站点配置文件，可以在其中配置网站的大部分参数。</li>
+<li> package.json：应用程序的信息。</li>
+<li> source：资源文件夹，用来存放用户资源的地方。</li>
+<li> themes：主题文件夹，Hexo会根据主题来生成不同的静态页面。</li>
+<li> scaffolds：md文档模板文件夹，当新建文章的时候，Hexo会根据模板来建立文件。</li>
+</ol>
+<h2 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a><code>生成静态页面</code></h2><p><strong>hexo g  #</strong> 此命令的作用是：生成public文件夹，并将source文件夹中的Markdown文档渲染成html静态网页文件放在此文件夹下（渲染功能是hexo结合node.js实现的）<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/0b1dea7da143a8c201fa9ac9c1e1e33005ac583b.png" alt="0b1dea7da143a8c201fa9ac9c1e1e33005ac583b"><br>注意：将来要推到远端（github）上去的内容默认都是public文件夹中的内容。<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/420d612cfce3f7e65571787b5be0c60eb7dd922e.png" alt="420d612cfce3f7e65571787b5be0c60eb7dd922e"><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/07dc0a9a7edf36ccb397afc3eef8ed02291a7825.png" alt="07dc0a9a7edf36ccb397afc3eef8ed02291a7825"></p>
+<h2 id="本地访问hexo网站"><a href="#本地访问hexo网站" class="headerlink" title="本地访问hexo网站"></a><code>本地访问hexo网站</code></h2><p><strong>hexo s   #</strong> 此命令的作用是：在本地起动 http 服务，将生成的 html 等输出文件布署到本地服务器上<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/8e066054d04d9f4d8de13585f6d460f248e5f3a6.png" alt="8e066054d04d9f4d8de13585f6d460f248e5f3a6"><br>这时，在浏览器中通过访问<a href="http://localhost:4000就可以看到hexo的默认主题了。">http://localhost:4000就可以看到hexo的默认主题了。</a><br>此主题在本地仓库中的路径为source/_posts/hello-world.md。<br>注意：hexo s命令是在前台运行的命令，如果要想要后台运行，可以输入如下命令：<br>nohup hexo s &gt; blog.log 2&gt;&amp;1 &amp;<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/c78d626ccc45be5e92bcd39a7a58937aa609df3e.png" alt="c78d626ccc45be5e92bcd39a7a58937aa609df3e"></p>
+<h1 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h1><h2 id="Github创建仓库"><a href="#Github创建仓库" class="headerlink" title="Github创建仓库"></a>Github创建仓库</h2><p>登陆Github账号并创建仓库，用来保存个人网站项目。<br><code>几个注意的地方：</code></p>
+<ol>
+<li> 仓库名字必须是：username.github.io，其中username是你的用户名，其它名称无效，所以每一个github账户最多只能创建一个这样可以直接使用域名访问的仓库，将来个人网站访问地址就是 http:// username.github.io ；</li>
+<li> 仓库创建成功可能不会立即生效，稍作等待。</li>
+</ol>
+<p>选择新建一个仓库（repository）<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/c4644a228ebcb2354a714d78edc2e71a1b6a8518.png" alt="c4644a228ebcb2354a714d78edc2e71a1b6a8518"><br>仓库名字必须是：username.github.io<br>例如用户名为kanbuki，那么仓库名必须是kanbuki.github.io<br>仓库属性选择为公开（public-公开-所有人可见，private-私有-只有自己可见）<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/76039c89e34f1a2e9bb07933ee34ceddfe9ee3ff.png" alt="76039c89e34f1a2e9bb07933ee34ceddfe9ee3ff"><br>提交后一个空的仓库就建好了<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/dce386644768b9f1fb00ea7c3de276249b9034a5.png" alt="dce386644768b9f1fb00ea7c3de276249b9034a5"><br>这时候我们通过kanbuki.ithub.io访问个人网站会报错，因为还未开启Github-Pages功能<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/aa3f335205e65707c82b8d47898f782c3524aebb.png" alt="aa3f335205e65707c82b8d47898f782c3524aebb"></p>
+<h2 id="本地仓库部署到Github"><a href="#本地仓库部署到Github" class="headerlink" title="本地仓库部署到Github"></a>本地仓库部署到Github</h2><h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a><code>配置SSH</code></h3><h4 id="生成-SSH-密匙"><a href="#生成-SSH-密匙" class="headerlink" title="生成 SSH 密匙"></a>生成 SSH 密匙</h4><p>目的：我们提交代码要有github权限才可以，但是直接使用用户名和密码太不安全了，所以使用ssh key来解决本地和服务器的连接问题。<br><code>打开 git-bash，</code>执行三条命令：<br>git config –<code>global</code> user.name <code>&quot;账号&quot;</code><br>git config –<code>global</code> user.email <code>&quot;邮箱&quot;</code><br>ssh-keygen -t rsa -C <code>&quot;邮箱&quot;</code><br>注意：<br><em>账号：是Github的用户名</em><br><em>邮箱：是Github经过验证后的邮箱</em><br>前两条配置很重要，每次 Git 提交时都会引用这两条信息，说明是谁提交了更新，所以会随更新内容一起被永久纳入历史记录。<br>配置完成后可用git config –list来查看已有配置。<br>第三条配置用来生成密匙，提示的是给 key 配置一个 password，可以为空，所以按三次回车，不设置密码，之后正常情况下就会生成成功。<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/00fe3c5a3738e415881518575f0b8211ec425b2b.png" alt="00fe3c5a3738e415881518575f0b8211ec425b2b"><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/67cd3db7dbc50a34c77b1af7c228df380b2d6a68.png" alt="67cd3db7dbc50a34c77b1af7c228df380b2d6a68"><br>因为我本地已经生成一次了，所以会提示“Overwrite”是否覆盖的信息，输入‘y’回车即可，如果是第一次生成是不会有这个提示信息的 ，直接回车三次就可以的。<br><code>SSH 公钥和私钥都被保存在提示的文件夹中，我们需要的是公钥。</code></p>
+<h4 id="添加-SSH-密匙"><a href="#添加-SSH-密匙" class="headerlink" title="添加 SSH 密匙"></a>添加 SSH 密匙</h4><p>打开 github 并登陆，点开右上角个人头像，打开?<strong><code>Settings</code></strong> 。选择左边?<strong><code>SSH and GPG keys</code></strong> ?标签，在 SSH Keys 一栏右边点击?<strong><code>New SSH Key</code></strong> 。<br>?  Title 自己填一个，可考虑用来标识本台计算机。<br>?  用记事本打开刚才提到的 id_rsa.pub 公钥文件，把所有内容复制粘贴到 Key 中。<br>?  点击 <strong>Add SSH Key</strong>，需要输入账号密码，完成后看见多了一个 SSH key。<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/735e9a641b8ae3944a9f8b12c52b84fe64373b19.png" alt="735e9a641b8ae3944a9f8b12c52b84fe64373b19"><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/449800c1e0c3b21940d042bd4d742e800dd589cf.png" alt="449800c1e0c3b21940d042bd4d742e800dd589cf"><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/3baa485041db0ed9cafe6ada03d4878fafe78001.png" alt="3baa485041db0ed9cafe6ada03d4878fafe78001"></p>
+<h4 id="测试是否配置成功"><a href="#测试是否配置成功" class="headerlink" title="测试是否配置成功"></a>测试是否配置成功</h4><p><code>ssh -T</code> <a href="mailto:git@github.com"><code>git@github.com</code></a><br><code>注意邮：原文输入即可</code>，看到“Hi liuxianan! You’ve successfully authenticated, but GitHub does not provide shell access”的提示信息表示SH已配置成功。<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/ae74456fa941e36d51de0b876efdff63ffb94c3a.png" alt="ae74456fa941e36d51de0b876efdff63ffb94c3a"></p>
+<h3 id="配置deploy"><a href="#配置deploy" class="headerlink" title="配置deploy"></a><code>配置deploy</code></h3><p>打开本地仓库站级配置文件的_config.yml，找到有关deploy的部分，采用SSH的方式推送到创建的github仓库中去<br><a href="word/SSH%E9%8F%82%E7%91%B0%E7%B4%A1%E9%8D%97%E7%A0%B1it@github.com">SSH方式即</a><a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#109;">&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#109;</a>的方式，并非https://的url方式。<br>原文件内容为：<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/f91f61af84d7e5790371182b2e14176b33adaba0.png" alt="f91f61af84d7e5790371182b2e14176b33adaba0"><br>修改为：<br><strong>deploy:</strong><br><strong>type: git</strong><br><strong>repository: <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;</a>:username/username.github.io.git</strong><br><strong>branch: master</strong><br><code>注意，除了</code>所有<code>：的后面都是有一个空格的，千万要小心，不然后出错的，其中yourname即在github上面的用户名</code><br>例如：<br>deploy:<br>type: git<br>repository: <a href="mailto:git@github.com">git@github.com</a>:kanbuki/kanbuki.github.io.git<br>branch: main</p>
+<h3 id="部署到github-1"><a href="#部署到github-1" class="headerlink" title="部署到github"></a><code>部署到github</code></h3><h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><p>hexo d命令执行时会调用 hexo 中的 hexo-deployer-git 插件，在该插件内部会启动一个进程调用git命令，从而将生成的html等代码上传到 github上。<br><strong>npm install hexo-deployer-git –save</strong><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/0ce8d5a977f317f08485f4baf7d4820729876f4b.png" alt="0ce8d5a977f317f08485f4baf7d4820729876f4b"><br>注意：不安装插件的话会报错以下错误<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/d2447cea9af6e412483d176c85161c65f84fba1f.png" alt="d2447cea9af6e412483d176c85161c65f84fba1f"></p>
+<h4 id="生成并部署"><a href="#生成并部署" class="headerlink" title="生成并部署"></a>生成并部署</h4><p><strong>hexo g #生成静态文件</strong><br><strong>hexo d</strong> <strong>#部署到github</strong><br>这两条命令可以合并成一个更快捷的命令：<strong>hexo d -g</strong>   #在部署前先生成<br>效果是一样的<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/086d689a70691391b64bf2a4ad3301f88626687b.png" alt="086d689a70691391b64bf2a4ad3301f88626687b"><br>部署完成后本地仓库会生成一个.deploy_git文件夹<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/383e4768858c83308859b93c245687890fe2afea.png" alt="383e4768858c83308859b93c245687890fe2afea"><br>查看github，本地仓库public文件夹中的内容已上传成功<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/5f5cd5b7b496d52185e426748197e2cabf791e4e.png" alt="5f5cd5b7b496d52185e426748197e2cabf791e4e"><br>通过域名username.github.io访问网站能够看到与访问本地仓库网站时的内容一致，表示博客网站搭建成功。<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/0d76c1441b9e6c7aab874165c41bc5266ccacb7c.png" alt="0d76c1441b9e6c7aab874165c41bc5266ccacb7c"></p>
+<h1 id="修改博客主题"><a href="#修改博客主题" class="headerlink" title="修改博客主题"></a>修改博客主题</h1><p><code>我们一般不会使用默认的主题，可以在官方提供的主题中进行选择。官方主题：</code><a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<h2 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a><code>下载主题</code></h2><p>比如选择的主题为：<a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia"><code>hexo-theme-yilia</code></a><br>进入本地仓库themes文件夹，克隆主题内容并放在yilia文件夹下：<br><strong>cd ./themes</strong><br><strong>git clone</strong> <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia"><strong>https://github.com/litten/hexo-theme-yilia</strong></a> <strong>yilia</strong><br><strong>注意：</strong><br>我在输入clone命令后提示错误：<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/72f9b3743cc123670389c79dd0ce6136e38e0b67.png" alt="72f9b3743cc123670389c79dd0ce6136e38e0b67"><br>原因可能是本地仓库中已经存在过这些包，可以先执行<strong>hexo clean</strong>来清理一下public的内容，然后再来重新生成和发布，结果克隆成功。<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/76127228beb01cf4952d703b1fdf7489714f0b23.png" alt="76127228beb01cf4952d703b1fdf7489714f0b23"><br>克隆成功后themes目录中生成了下载的主题包：<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/f97c11c6acb0625ff938eb0e6bd08c4f26c1d6e2.png" alt="f97c11c6acb0625ff938eb0e6bd08c4f26c1d6e2"></p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a><code>更换主题</code></h2><ol>
+<li> <code>进入根目录，打开根目录下的_config.yml站级配置文件更改主题，</code></li>
+</ol>
+<p><code>theme: landscape修改为theme: yilia</code><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/efaf58b561e690947793c59c9b8c306a590dfef2.png" alt="efaf58b561e690947793c59c9b8c306a590dfef2"></p>
+<ol start="2">
+<li> <code>执行hexo d</code> <code>-g重新生成部署</code></li>
+</ol>
+<p>通过域名username.github.io访问网站看到主题更换成功<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/bcc6e07c647e26db11571351332dce8cf73dd486.png" alt="bcc6e07c647e26db11571351332dce8cf73dd486"></p>
+<h1 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h1><p>github支持域名访问，可以使用默认的 username.github.io 来访问。如果想更个性一点，可以绑定一个属于自己的域名。</p>
+<h2 id="域名注册"><a href="#域名注册" class="headerlink" title="域名注册"></a><code>域名注册</code></h2><p><code>要有自己的专属域名，就要去申请注册域名，可以通过万网申请购买：</code><a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/"><code>https://wanwang.aliyun.com/</code></a><br><code>注意：新购买的域名需要完成实名认证，可能需要时间较长，只有认证通过之后才能进行域名解析。</code><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/7403ba644997f4145b4c2d2281b6653829f8b5bb.png" alt="7403ba644997f4145b4c2d2281b6653829f8b5bb"></p>
+<h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a><code>域名解析</code></h2><p><code>域名实名认证通过后，进入万网的控制台，点击“云解析DNS”：</code><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/1a464e9cd369912ec7505c79cda8b5c75780f355.png" alt="1a464e9cd369912ec7505c79cda8b5c75780f355"><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/a0c4e9f21a01f8ee25aa7762d001ffdca5905432.png" alt="a0c4e9f21a01f8ee25aa7762d001ffdca5905432"><br><code>找到已经购买的域名，点击“解析设置”</code><br><code>注意：实名认证通过后状态为正常，否则为异常状态，异常状态下是无法解析的。</code><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/96da316f8bdb42ad7bb95183f033abef0d88d8f5.png" alt="96da316f8bdb42ad7bb95183f033abef0d88d8f5"><br>点击“添加记录”，记录一共需要添加2条, 这样可以保证无论是否添加www都可以访问：<br>第1条记录：采用“A”+IP地址的方式，主机记录填入“www”、记录值填入ip<code>，</code>其余项默认即可。<br>ip可以通过ping你的url获取：例如：在cmd命令行中输入ping命令：<br><code>ping</code> <a target="_blank" rel="noopener" href="http://www.kanbuki.github.io/"><code>www.kanbuki.github.io</code></a><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/21c10d22a80b2d8c506521c9346479ba333a58de.png" alt="21c10d22a80b2d8c506521c9346479ba333a58de"><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/df596d47d73ee6be3d87b27c21b32cda782ccd26.png" alt="df596d47d73ee6be3d87b27c21b32cda782ccd26"><br><code>第2条记录：采用CNAME+域名的方式，</code><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/858d56bc548841fc22470a1e7c8e257f740d84aa.png" alt="858d56bc548841fc22470a1e7c8e257f740d84aa"><br><code>2条记录均设置完成后的结果：</code><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/ffbce1e22d5709ae32721a40b21273a217e8106f.png" alt="ffbce1e22d5709ae32721a40b21273a217e8106f"><br><code>主机记录www对应www. kanbuki.cn，</code><a href="mailto:涓绘満璁板綍@瀵瑰簲kanbuki.cn"><code>主机记录</code></a> <code>@对应kanbuki.cn</code><br><code>设置完成解析之后，直接访问域名查看能否跳转到我们github页面，答案是不能，显示404的错误，因为此时GitHub Pages 的配置项中还未配置自定义的域名。</code><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/cf1c703bea3484eb6238726f44a6d0bf96fc26ac.png" alt="cf1c703bea3484eb6238726f44a6d0bf96fc26ac"></p>
+<h2 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a><code>域名配置</code></h2><p>在username.github.io仓库中找到“setings”<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/4d2da87eef4886e702570249aac99063fda23811.png" alt="4d2da87eef4886e702570249aac99063fda23811"><br><code>进入设置后，往下拉，找到GitHub Pages设置界面</code> ：<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/a3d25dedd3e75cdc1cd8e40ddc84a3971280f1a4.png" alt="a3d25dedd3e75cdc1cd8e40ddc84a3971280f1a4"><br>在custom domain 的选项中输入你想自定义的域名地址，点击“save”，<br>勾选Enforce HTTPS，作用：GitHub Pages 会在我们配置自定义域名之后自动帮我们配置 HTTPS 服务。刚配置完自定义域名的时候可能这个选项是不可用的，一段时间后等到其可以勾选了，直接勾选即可，这样整个博客就会变成 HTTPS 的协议的了。<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/29aa6cf651d89d187a6870206fc3e818e0a56815.png" alt="29aa6cf651d89d187a6870206fc3e818e0a56815"><br>完成网址变为输入的自定义域名，不再是username.github.io，如图所示：<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/7dd600f2aa616f4f71eff7a8b606deda304f84ee.png" alt="7dd600f2aa616f4f71eff7a8b606deda304f84ee"><br>此时项目目录下面生成了一个 CNAME 文件，内容就是自定义域名。<br>CNAME文件的作用：CNAME是一个别名记录，它允许你将多个名字映射到同一台计算机。比如刚才添加的CNAME文件，会被github自动识别，当我们输入username.github.io和输入自定义域名时，它将指向同一个ip地址，展示同样的内容。<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/b2f7c6a00b07d2990795f3afc88bbf9dbe1ba36f.png" alt="b2f7c6a00b07d2990795f3afc88bbf9dbe1ba36f"><br><code>自定义域名配置完成后，通过自定义的域名可以访问成功，同时通过域名username.github.io仍然也可以访问成功。</code><br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/9510d55204f914cc15701dc9386cb2ace6d386d8.png" alt="9510d55204f914cc15701dc9386cb2ace6d386d8"><br><strong><code>注意：</code></strong> <code>生成的</code>CNAME文件只在github中，本地仓库中并不存在，下次从本地提交文档时容易被冲掉，所以需要在本地仓库的source文件夹下建立一个相同内容的CNAME文件（从github中下载也可以）。<br><img src="/2021/07/20/GitHub+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/b7b306c746eb071ada5edec19d23a3ca9e87cbdd.png" alt="b7b306c746eb071ada5edec19d23a3ca9e87cbdd"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/07/14/markdowm%E8%AF%AD%E6%B3%95%E6%B1%87%E6%80%BB/" rel="prev" title="markdowm语法汇总">
+                  <i class="fa fa-chevron-left"></i> markdowm语法汇总
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dongxuewei</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
